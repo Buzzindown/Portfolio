@@ -1,7 +1,7 @@
 window.addEventListener("load", () => {
   nameAnimation();
   addDescObservers();
-  addTimelineObservcers();
+  addTimelineObservers();
   laptopFlicker();
   returnToTop();
 });
@@ -52,20 +52,28 @@ const addDescObservers = () => {
   });
 };
 
-const addTimelineObservcers = () => {
+let currentTimelineNode = null;
+
+const addTimelineObservers = () => {
   const elemsObj = document.getElementsByClassName("timeline-step");
+  elemsObj[0].classList.add("current-timeline-step");
+  currentTimelineNode = elemsObj[0];
 
   let observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          currentTimelineNode = entry.target;
           entry.target.classList.add("current-timeline-step");
-        } else {
-          entry.target.classList.remove("current-timeline-step");
+        }
+      });
+      Object.keys(elemsObj).forEach((key) => {
+        if (!elemsObj[key].isSameNode(currentTimelineNode)) {
+          elemsObj[key].classList.remove("current-timeline-step");
         }
       });
     },
-    { threshold: 0, rootMargin: "-40% 0% -40% 0%" }
+    { threshold: 0, rootMargin: "-35% 0% -35% 0%" }
   );
   Object.keys(elemsObj).forEach((key) => {
     observer.observe(elemsObj[key]);
