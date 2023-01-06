@@ -73,7 +73,7 @@ const addTimelineObservers = () => {
         }
       });
     },
-    { threshold: 0, rootMargin: "-35% 0% -35% 0%" }
+    { threshold: 0, rootMargin: "-40% 0% -40% 0%" }
   );
   Object.keys(elemsObj).forEach((key) => {
     observer.observe(elemsObj[key]);
