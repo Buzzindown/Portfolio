@@ -207,18 +207,16 @@ nav h1 [class*="fa-"]:hover {
 }
 
 .description {
-  background-color: var(--prime-light);
+  background-color: var(--white);
   color: black;
   padding: 1rem;
   border-radius: 10px;
-  line-height: 1.5;
-  font-size: 1rem;
-  box-shadow: 0 0 0 4px transparent;
+  box-shadow: 0 0 0 6px transparent;
   transition: box-shadow 0.5s linear;
 }
 
 .description-bordered {
-  box-shadow: 0 0 0 4px var(--white);
+  box-shadow: 0 0 0 6px var(--secondary-light);
   transition: box-shadow 0.5s linear;
   cursor: pointer;
 }
