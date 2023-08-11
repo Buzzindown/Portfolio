@@ -363,6 +363,12 @@ nav h1 [class*="fa-"]:hover {
   grid-row: 1;
 }
 
+.timeline-line-first-line {
+  background: linear-gradient(180deg, transparent 0%, rgba(219, 242, 39, 1) 100%);
+  grid-column: 1/1;
+  grid-row: 1;
+}
+
 .timeline-step {
   height: calc(1.5rem * 1.5);
   width: calc(1.5rem * 1.5);
@@ -370,7 +376,7 @@ nav h1 [class*="fa-"]:hover {
   position: relative;
   transform: translateX(-50%);
   left: 50%;
-  top: 0;
+  top: calc(100% - calc(1.5Rem * 1.5));
   background-color: var(--secondary-light);
   transition: box-shadow 0.5s linear;
   box-shadow: 0 0 0 4px transparent;
@@ -496,6 +502,8 @@ span .hovering::before {
   }
 
   .date {
+    display:flex;
+    align-items: flex-end;
     grid-column: 1/1;
     grid-row: 1;
     margin: 0;
@@ -507,7 +515,7 @@ span .hovering::before {
     grid-row: 1;
   }
 
-  .timeline-line-final-line {
+  .timeline-line-final-line, .timeline-line-first-line {
     grid-column: 2/2;
     grid-row: 1;
   }
