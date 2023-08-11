@@ -330,6 +330,8 @@ nav h1 [class*="fa-"]:hover {
 }
 
 .date {
+  display:flex;
+  align-items: flex-end;
   margin: 0;
   padding: 0 0 0 2.5rem;
   line-height: 1.5;
